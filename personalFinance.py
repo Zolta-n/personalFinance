@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from flask_wtf import FlaskForm
-from wtforms import Form, IntegerField,StringField,FormField,FieldList, SubmitField, IntegerField,DateField
+from wtforms import StringField,FieldList, SubmitField, IntegerField,DateField
 from wtforms import validators
 
 myFields=[{'account':'HUF Account','currency':'HUF', 'type':'debit'},
