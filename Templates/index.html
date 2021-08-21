@@ -1,0 +1,32 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="jumbotron">
+    <h1>Work in Progress</h1>
+    <form method="POST">
+
+        <div class="form-row">
+            <div class="col-3" >
+            {{form.hidden_tag()}}
+            <p>
+            <h6>{{form.date.label}}</h6>
+            {{form.date(class='form-control float-right text-right d-flex', type='date')}}
+            <br>
+            </p>
+            <hr/>
+            {% for subform in form.fields %}
+                <h6>{{ subform.label }}</h6>
+                <div class="input-group mb-3">
+                     <div class="input-group-prepend">
+                     <span class="input-group-text" id='area-{{loop.index}}'>{{currencies[loop.index-1]}}</span>
+                     </div>
+                     {{ subform(class='form-control float-right text-right d-flex', placeholder='0')}}
+                </div>
+
+            {% endfor %}
+            <br>
+            {{form.submit(class="btn btn-primary")}}
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
