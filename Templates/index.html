@@ -13,7 +13,7 @@
             <br>
             </p>
             <hr/>
-            {% for subform in form.fields %}
+            {% for subform in form.fieldlist %}
                 <h6>{{ subform.label }}</h6>
                 <div class="input-group mb-3">
                      <div class="input-group-prepend">
@@ -23,6 +23,8 @@
                 </div>
 
             {% endfor %}
+            <br>
+            <!--{{form.fieldlist(class='form-control float-right text-right d-flex', placeholder='0')}}-->
             <br>
             {{form.submit(class="btn btn-primary")}}
             </div>
